@@ -1,0 +1,30 @@
+// Write a program to print the n lines of the below pyramid. 
+// For n = 5
+//1
+//212
+//32123
+//4321234
+//543212345
+
+import java.util.Scanner;
+class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        printPyramid(n);
+    }
+   static void printPyramid(int n) {
+        int i, j, row = n;
+        for (i = 1; i <= row; i++) {
+            for (j = -i; j <= i; j++) {
+                if (j == 0 || j == 1) {
+                    continue;
+                }
+                System.out.print(Math.abs(j));
+            }
+            System.out.print("\n");
+        }
+    }
+}
